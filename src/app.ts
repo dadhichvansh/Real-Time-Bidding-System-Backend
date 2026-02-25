@@ -4,6 +4,7 @@ import { errorHandler } from './middleware/error.middleware.js';
 import authRoutes from './modules/auth/auth.routes.js';
 import auctionRoutes from './modules/auctions/auctions.routes.js';
 import bidRoutes from './modules/bids/bids.routes.js';
+import userRoutes from './modules/users/users.routes.js';
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth', authRoutes);
 app.use('/api/auctions', auctionRoutes);
 app.use('/api/bids', bidRoutes);
+app.use('/api/users', userRoutes);
 
 app.use('/api/health', (req, res) => {
   res.json({
