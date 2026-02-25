@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "0.1.0",
   "description": "",
-  "main": "dist/server.js",
+  "main": "dist/src/server.js",
   "scripts": {
     "dev": "tsx watch --env-file=.env src/server.ts",
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "build": "tsc",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
