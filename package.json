@@ -1,6 +1,6 @@
 {
   "name": "real-time-bidding-system-backend",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Real-time bidding system backend API with WebSocket support, authentication, and PostgreSQL database integration",
   "main": "dist/src/server.js",
   "scripts": {
