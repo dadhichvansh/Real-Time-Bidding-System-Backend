@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "real-time-bidding-system-backend",
   "version": "0.1.0",
-  "description": "",
+  "description": "Real-time bidding system backend API with WebSocket support, authentication, and PostgreSQL database integration",
   "main": "dist/src/server.js",
   "scripts": {
     "dev": "tsx watch --env-file=.env src/server.ts",
@@ -14,7 +14,7 @@
     "db:studio": "npx drizzle-kit studio --verbose"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vansh Dadhich",
   "license": "ISC",
   "type": "module",
   "dependencies": {
