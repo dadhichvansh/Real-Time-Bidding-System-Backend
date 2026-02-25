@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import { errorHandler } from './middleware/error.middleware.js';
 import authRoutes from './modules/auth/auth.routes.js';
+import auctionRoutes from './modules/auctions/auctions.routes.js';
 
 const app = express();
 
@@ -11,10 +12,11 @@ app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/auctions', auctionRoutes);
 
 app.use('/api/health', (req, res) => {
   res.json({
-    status: 'OK'
+    status: 'OK',
   });
 });
 
