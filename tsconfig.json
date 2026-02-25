@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     // File Layout
-    "rootDir": "./src",
+    "rootDir": "./",
     "outDir": "./dist",
 
     // Environment Settings
     "module": "nodenext",
     "target": "es2020",
-    "types": [],
+    "types": ["node"],
 
     // Other Outputs
     "sourceMap": true,
@@ -25,5 +25,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true
-  }
+  },
+  "include": ["src", "drizzle.config.ts"]
 }
