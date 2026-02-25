@@ -1,19 +1,25 @@
 import { Server } from 'socket.io';
-import { Server as HttpServer } from 'http';
+import { createServer } from 'http';
+import app from '../app.js';
 
-let io: Server;
+const httpServer = createServer(app);
 
-export const initSocket = (server: HttpServer) => {
-  io = new Server(server, {
-    cors: { origin: '*' },
+export const io = new Server(httpServer, {
+  cors: {
+    origin: '*',
+  },
+});
+
+io.on('connection', (socket) => {
+  console.log('Client connected:', socket.id);
+
+  socket.on('join:auction', (auctionId: string) => {
+    socket.join(auctionId);
   });
 
-  io.on('connection', (socket) => {
-    console.log('Socket connected:', socket.id);
+  socket.on('disconnect', () => {
+    console.log('Client disconnected:', socket.id);
   });
-};
+});
 
-export const getIO = () => {
-  if (!io) throw new Error('Socket not initialized');
-  return io;
-};
+export default httpServer;
