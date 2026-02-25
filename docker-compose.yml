@@ -6,7 +6,7 @@ services:
     environment:
       DATABASE_URL: postgres://postgres:postgres@db:5432/bidding
       REDIS_URL: redis://redis:6379
-      JWT_SECRET: supersecret
+      JWT_SECRET: c763a1fcd0fd4b533e0c7de15327d9abf6c1c033da1a6cb8944c50d70fb76d13
     depends_on:
       - db
       - redis
